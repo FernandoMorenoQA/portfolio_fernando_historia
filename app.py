@@ -58,6 +58,7 @@ with col2:
     st.markdown("""
     <span class="badge">Mestre em TI</span>
     <span class="badge">MBA</span>
+    <span class="badge">Sistemas de Informação</span>            
     <span class="badge">ISTQB</span>
     """, unsafe_allow_html=True)
     
