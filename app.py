@@ -52,7 +52,7 @@ with col1:
         st.error("📷 Foto não encontrada. Verifique o nome 'foto_fernando.png' na pasta.")
 
 with col2:
-    st.title("Fernando Celso Moreno de Souza")
+    st.title("Fernando Celso S. M de Souza")
     st.subheader("Especialista em QA | 18 Anos de TI")
     
     st.markdown("""
