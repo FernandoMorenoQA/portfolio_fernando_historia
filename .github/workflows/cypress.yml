@@ -1,0 +1,16 @@
+name: Execução de Testes Cypress
+on: [push] # Dispara a pipeline a cada push para o GitHub
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Rodar Testes do Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          # Como seu site já está no ar, não precisamos dar 'start' no Streamlit
+          # O Cypress vai ler a URL do seu arquivo validacao_portfolio.cy.js
