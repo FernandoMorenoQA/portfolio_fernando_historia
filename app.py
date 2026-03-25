@@ -38,6 +38,26 @@ st.markdown("""
         display: inline-block;
         margin-right: 5px;
     }
+
+    /* --- ALTERAÇÃO: ESTILO COM A COR OFICIAL DO GIT (LARANJA/AMARELO) --- */
+/* Localize este bloco no seu código e altere estas 2 linhas */
+.btn-github {
+        background-color: #24292e; /* Preto clássico */
+        color: #ffffff !important; /* Texto branco para contraste total */
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+    }
+    .btn-git:hover {
+        background-color: #d13d21; /* Tom um pouco mais escuro no hover */
+        transform: translateY(-2px); /* Efeito suave de subida */
+        text-decoration: none !important;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    /* ------------------------------------------------------------------ */
+
     </style>
     """, unsafe_allow_html=True)
 
@@ -46,7 +66,6 @@ col1, col2 = st.columns([1, 2], gap="large")
 
 with col1:
     try:
-        # Certifique-se de que sua foto está na pasta com este nome:
         st.image("foto_fernando.png", width=250)
     except:
         st.error("📷 Foto não encontrada. Verifique o nome 'foto_fernando.png' na pasta.")
@@ -63,6 +82,14 @@ with col2:
     """, unsafe_allow_html=True)
     
     st.markdown('<br><a href="https://www.linkedin.com/in/fernandocelsomoreno/" target="_blank" class="link-simples">LinkedIn</a>', unsafe_allow_html=True)
+
+    # --- BOTÃO COM A COR DO GIT (LARANJA) ---
+    st.markdown(
+        '<a href="https://github.com/FernandoMorenoQA/portfolio_fernando_historia" class="btn-git" target="_blank">'
+        'Ver Código Fonte (Git)'
+        '</a>', 
+        unsafe_allow_html=True
+    )
 
 st.divider()
 
@@ -122,7 +149,7 @@ with col_b:
 
 st.divider()
 
-# Mensagem Final (Limpa, sem ícones)
+# Mensagem Final
 st.info("Minha trajetória prova que o conhecimento não conhece limitações sensoriais, apenas a força da determinação.")
 
 # Rodapé
