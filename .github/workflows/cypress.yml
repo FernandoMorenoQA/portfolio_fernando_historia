@@ -12,5 +12,11 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          # Como seu site já está no ar, não precisamos dar 'start' no Streamlit
-          # O Cypress vai ler a URL do seu arquivo validacao_portfolio.cy.js
+          # Removi a duplicação e deixei apenas o necessário
+
+      - name: Upload Screenshots (se falhar)
+        uses: actions/upload-artifact@v4
+        if: failure() # Só roda se o passo acima der erro
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots

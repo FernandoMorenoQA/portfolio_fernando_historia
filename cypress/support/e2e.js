@@ -15,3 +15,18 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+// cypress/support/e2e.js
+
+// Oculta requisições específicas do painel de logs do Cypress
+// Isso evita que o log fique atualizando e "pulando" após o teste terminar
+const origLog = Cypress.log;
+Cypress.log = function (opts, ...args) {
+    if (opts.displayName === 'xhr' || opts.displayName === 'fetch') {
+        const url = opts.consoleProps?.().URL || opts.url || '';
+        if (url.includes('/api/v2/app/status') || url.includes('_stcore/health')) {
+            return;
+        }
+    }
+    return origLog.call(Cypress, opts, ...args);
+};
